@@ -1,29 +1,25 @@
-    function checkPrompt() {
+function checkPrompt () {
 
-        const one = prompt('Значение 1:', ''),
-        two = prompt('Значение 2:', '');
+    const num = prompt('Значение 1:', ''),
+    radix = prompt('Значение 2:', '');
 
-        const examOne = /^(-?[0-9]\d*)$/;
-        const examTwo = /^([0-9]\d*)$/;
+    ((radix < 2 || radix > 36) || !Number.isInteger(+num) || !Number.isInteger(+radix)) ?
+        console.log('Некорректный ввод!') : console.log((+num).toString(radix));
 
-        (!(examOne.test(one)) || !(examTwo.test(two)) || !isFinite(one) || !isFinite(two)) ?
-            console.log('Некоректный ввод') : console.log((+one).toString(two));
-
-    }
+}
 
 
+function verifyPrompt () {
 
-    function verifyPrompt() {
+    const value1 = prompt('Значение 1:', '');
 
-        const one = prompt('Значение 1:', ''),
-        two = prompt('Значение 2:', '');
+    if (Number.isInteger(+value1)) { var value2 = prompt('Значение 2:', '') }
+    
+    const sum = (+value1) + (+value2);
+    const quotient = (+value1) / (+value2);
 
-        const exam = /^(-?[0-9]\d*)$/;
+    (!Number.isInteger(+value1) || !Number.isInteger(+value2)) ? console.log('Некорректный ввод!') :
+    
+        console.log(`Oтвет: ${sum}, ${quotient}`);
 
-        const plus = (+one) + (+two);
-        const divide = (+one) / (+two);
-
-        (!(exam.test(one)) || !(exam.test(two)) || !isFinite(one) || !isFinite(two)) ?
-            console.log('Некоректный ввод') : console.log(`Oтвет: ${plus}, ${divide}`);
-
-    }
+}
