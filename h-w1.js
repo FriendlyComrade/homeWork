@@ -12,8 +12,9 @@ function checkPrompt () {
 function verifyPrompt () {
 
     const value1 = prompt('Значение 1:', '');
+    let value2;
 
-    if (Number.isInteger(+value1)) { var value2 = prompt('Значение 2:', '') }
+    if (Number.isInteger(+value1)) { value2 = prompt('Значение 2:', '') }
     
     const sum = (+value1) + (+value2);
     const quotient = (+value1) / (+value2);
